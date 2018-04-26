@@ -13,13 +13,25 @@ module.exports = function(app) {
     res.json("/members");
   });
 
-  app.get("/api/resources/:userId", function(req, res) {
-    db.Resource.findAll(
-     {
-          where:{
-            userid: req.params.userId,
-            shared: shared}
+  // app.get("/api/resources/:userId:shared", function(req, res) {
+  //   db.Resource.findAll(
+  //    {
+  //         where:{
+  //           userid: req.params.userId,
+  //           isPublic: req.params.shared}
           
+  //   }).then(function(dbResource) {
+  //     console.log(dbResource);
+  //     res.json(dbResource);
+  //   });
+  // });
+
+  app.get("/api/resources/:userId", function(req, res) {
+    db.Resource.findAll({
+      include: [db.User], 
+        where: {
+          userId: req.params.userId,
+        }
     }).then(function(dbResource) {
       res.json(dbResource);
     });
@@ -27,13 +39,12 @@ module.exports = function(app) {
 
   app.get("/api/resources", function(req, res) {
     db.Resource.findAll({
-      where:{
-        isPublic: true
-      }
+      include: [db.User]
     }).then(function(dbResource) {
       res.json(dbResource);
     });
   });
+
 
   // Route for getting the shared resources
   app.get("/api/resources/shared/:userId", function(req, res) {
