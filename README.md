@@ -1,1 +1,1 @@
-# friend-resource-sharing
+# resource-sharing
