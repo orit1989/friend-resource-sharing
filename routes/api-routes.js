@@ -17,7 +17,7 @@ module.exports = function(app) {
     db.Resource.findAll(
      {
           where:{
-            userid: req.params.uerId,
+            userid: req.params.userId,
             shared: shared}
           
     }).then(function(dbResource) {
@@ -39,7 +39,7 @@ module.exports = function(app) {
   app.get("/api/resources/shared/:userId", function(req, res) {
     db.Share.findOne({
       where: {
-        userid: req.params.id
+        userid: req.params.userId
       }
     }).then(function(dbResource) {
       res.json(dbResource);
