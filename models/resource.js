@@ -22,16 +22,29 @@ module.exports = function (sequelize, DataTypes) {
             defaultValue: false
         }
     });
+    
+
     Resource.associate = function (models) {
         Resource.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
             }
         });
-
+        SharedResources = sequelize.define('SharedResources', {});
         Resource.belongsToMany(models.User, {
-            through: "SharedResources"
+            through: SharedResources
         });
+        models.User.belongsToMany(Resource, {
+            through: SharedResources
+        });
+
+
+        // Resource.belongsToMany(models.User, {
+        //     through: "SharedResources"
+        // });
     };
+
+
+
     return Resource;
 };

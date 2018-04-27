@@ -13,51 +13,7 @@ module.exports = function(app) {
     res.json("/members");
   });
 
-  // app.get("/api/resources/:userId:shared", function(req, res) {
-  //   db.Resource.findAll(
-  //    {
-  //         where:{
-  //           userid: req.params.userId,
-  //           isPublic: req.params.shared}
-          
-  //   }).then(function(dbResource) {
-  //     console.log(dbResource);
-  //     res.json(dbResource);
-  //   });
-  // });
-
-  app.get("/api/resources/:userId", function(req, res) {
-    db.Resource.findAll({
-      include: [db.User], 
-        where: {
-          userId: req.params.userId,
-        }
-    }).then(function(dbResource) {
-      res.json(dbResource);
-    });
-  });
-
-  app.get("/api/resources", function(req, res) {
-    db.Resource.findAll({
-      include: [db.User]
-    }).then(function(dbResource) {
-      res.json(dbResource);
-    });
-  });
-
-
-  // Route for getting the shared resources
-  app.get("/api/resources/shared/:userId", function(req, res) {
-    db.Share.findOne({
-      where: {
-        userid: req.params.userId
-      }
-    }).then(function(dbResource) {
-      res.json(dbResource);
-    });
-  });
-
-
+ 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
@@ -74,24 +30,6 @@ module.exports = function(app) {
       // res.status(422).json(err.errors[0].message);
     });
   });
-
-// Route for adding the user's resources
-  app.post("/api/resources/:userId", function(req, res) {
-    console.log(req.body);
-    db.Resource.create({
-      topic: req.body.topic,
-      link: req.body.link,
-      description: req.body.description,
-      isPublic: req.body.isPublic
-    }).then(function() {
-      res.redirect(307, "/api/resources");
-    }).catch(function(err) {
-      console.log(err);
-      res.json(err);
-      // res.status(422).json(err.errors[0].message);
-    });
-  });
-
 
   // Route for logging user out
   app.get("/logout", function(req, res) {
