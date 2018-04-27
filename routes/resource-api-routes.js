@@ -24,9 +24,9 @@
          });
      });
 
-     app.get("/api/resources/:id/shared", function (req, res) {
-         db.User.findById(req.params.id).then(function (user) {
-             user.getResources().then(function (dbResource) {
+     app.get("/api/resources/:userId/shared", function (req, res) {
+         db.User.findById(req.params.userId).then(function (user) {
+             user.getSharedResources().then(function (dbResource) {
                  res.json(dbResource);
              })
          });
