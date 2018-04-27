@@ -2,7 +2,6 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
-.navbar-brand {
-  color: red;
-
+html {
+  background-image:url(../img/gradient.png);
 }
