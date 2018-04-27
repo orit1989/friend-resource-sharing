@@ -32,34 +32,6 @@ require("./routes/resource-api-routes.js")(app);
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function () {
 
-  // db.User.create({
-  //   email: "SECONDtest@example.com",
-  //   password: "randomString"
-  // }).then(function (user) {
-
-  //   db.Resource.create({
-  //     topic: "randomTopic",
-  //     link: "randomlink",
-  //     description: "randomDescription",
-  //     isPublic: false,
-  //     UserId: user.id
-  //   }).then(function (resource) {
-
-  //     db.User.findOne({
-  //       where: {
-  //         id: 1
-  //       }
-  //     }).then(function (secondUser) {
-
-  //       resource.addUser(secondUser);
-
-  //     });
-
-  //   });
-
-  // });
-
-
   app.listen(PORT, function () {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
