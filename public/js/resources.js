@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 $(document).ready(function() {
   
     // Function for creating a new list row for resources
+=======
+
+>>>>>>> 0a605552bbc883419fc6b1ace97122e9b76a8374
     function createResourceRow(resourceData) {
       var newTr = $("<tr>");
       newTr.data("resource", resourceData);
@@ -41,6 +45,7 @@ $(document).ready(function() {
         renderResourceList(rowsToAdd);
        });
     }
+<<<<<<< HEAD
 
   });
 
@@ -75,4 +80,6 @@ $(document).ready(function() {
         .then(getResources);
     }
 });
+=======
+>>>>>>> 0a605552bbc883419fc6b1ace97122e9b76a8374
   
