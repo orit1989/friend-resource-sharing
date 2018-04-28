@@ -10,6 +10,8 @@ $(document).ready(function() {
 
   var user = JSON.parse(window.sessionStorage.getItem("user"));
   var userId = user.id; 
+  var resourcesList = $("tbody");
+  var container = $("container");
 
   function createResourceRow(resourceData) {
     var newTr = $("<tr>");
@@ -42,25 +44,11 @@ $(document).ready(function() {
      });
   }
 
-  // Function for retrieving shared resources and getting them ready to be rendered to the page
-  function getSharedResources(userId) {
-    $.get("/api/resources/" + userId + "/shared", function(data) {
-      var rowsToAdd = [];
-      for (var i = 0; i < data.length; i++) {
-        rowsToAdd.push(createResourceRow(data[i]));
-      }
-      renderResourceList(rowsToAdd);
-     });
-  }
-
-  var authorList = $("tbody");
-  var authorContainer = $(".author-container");
- 
   // A function for rendering the list of authors to the page
   function renderResourceList(rows) {
     if (rows.length) {
       console.log(rows);
-      authorList.prepend(rows);
+      resourcesList.prepend(rows);
     }
     else {
       renderEmpty();
@@ -72,7 +60,7 @@ $(document).ready(function() {
     var alertDiv = $("<div>");
     alertDiv.addClass("alert alert-danger");
     alertDiv.text("Please create a resource.");
-    authorContainer.append(alertDiv);
+    container.append(alertDiv);
   }
 
   // Function for handling what happens when the delete button is pressed
