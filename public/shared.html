@@ -6,19 +6,189 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <link href="public/stylesheets/style.css" rel="stylesheet">
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!--     css     -->
+  <style>
+    .navbar-brand {
+      vertical-align: center;
+      display: inline-block;
+    }
+
+    .navbar {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 40px;
+    }
+
+    .navbar ul {
+      padding: 0px;
+      margin: 0px;
+      text-align: center;
+      vertical-align: top;
+    }
+
+    @media screen and (min-width:768px) {
+      .navbar-brand-centered {
+        /* position: absolute; */
+        left: 50%;
+        display: block;
+        width: 160px;
+        text-align: center;
+        background-color: #eee;
+      }
+      .navbar>.container .navbar-brand-centered,
+      .navbar>.container-fluid .navbar-brand-centered {
+        margin-left: -80px;
+      }
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .search-text {
+      margin-top: 10px;
+      background-color: #7dabdb;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    .search-text .input-search {
+      height: 35px;
+      width: 400px;
+      padding-left: 20px;
+      color: #333;
+    }
+
+    .search-text .btn-search {
+      background-color: #7dabdb;
+      border: 1px solid #FFF;
+      color: #FFF;
+      padding: 11px 22px;
+    }
+
+    .search-text .btn-search:hover {
+      background-color: #FFF;
+      color: #7dabdb;
+    }
+
+    .copyright {
+      background-color: #f0f0f0;
+    }
+
+    .copyright p {
+      margin: 5px 0px;
+    }
+
+    footer {
+      background-color: #222222;
+      padding: 10px 0px;
+    }
+
+    footer .menu li a {
+      color: #b1aca1;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    footer .menu li a:hover {
+      color: #7dabdb;
+    }
+
+    .fa.fa-facebook,
+    .fa.fa-dropbox,
+    .fa.fa-flickr,
+    .fa.fa-github,
+    .fa.fa-linkedin,
+    .fa,
+    fa-tumblr,
+    .fa.fa-google-plus,
+    .fa.fa-tumblr {
+      color: #b1aca1;
+      font-size: 20px;
+      padding: 10px;
+    }
+
+    .fa.fa-facebook:hover,
+    .fa.fa-dropbox:hover,
+    .fa.fa-flickr:hover,
+    .fa.fa-github:hover,
+    .fa.fa-linkedin:hover,
+    .fa,
+    fa-tumblr:hover,
+    .fa.fa-google-plus:hover,
+    .fa.fa-tumblr:hover {
+      color: #6794c2;
+    }
+
+    footer {
+      width: 100%;
+    }
+  </style>
 </head>
 
 <body>
+  <!-- NAV BAR================================================================================================== -->
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
         <div class="navbar-brand" href="logo"></div>
-        <img src="frs_logo.gif" width="120" height="auto" alt="" />
-        </a>
+        <img src="img/frs_logo.gif" width="120" height="auto" alt="" />
+      </div>
+      <!-- /right .navbar-collapse -->
+      <div class="collapse navbar-collapse" id="navbar-brand-centered">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">My View</a>
+          </li>
+          <li>
+            <a href="#">Friends</a>
+          </li>
+          <li>
+            <a href="#">Resources</a>
+          </li>
+          <li>
+            <a href="#">Public</a>
+          </li>
+          <li>
+            <a href="#">Shared</a>
+          </li>
+          <!--     login/out     -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, User
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/user/preferences">
+                  <i class="icon-cog"></i> Preferences</a>
+              </li>
+              <li>
+                <a href="/help/support">
+                  <i class="icon-envelope"></i> Contact Support</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="/auth/logout">
+                  <i class="icon-off"></i> Logout</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
+  <!-- Form ================================================================================================== -->
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
@@ -101,9 +271,100 @@
         </form>
       </div>
     </div>
+    <!-- FOOTER  ================================================================================================== -->
+    <div class="search-text">
+      <div class="container-fluid">
+        <div class="row text-center">
+          <div class="form">
+            <form id="search-form" class="form-search form-horizontal">
+              <input type="text" class="input-search" placeholder="Search">
+              <button type="submit" class="btn-search">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row text-center">
+          <ul class="list-inline">
+            <li>
+              <a href="#">
+                <i class="fa fa-facebook fa-2x"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-dropbox fa-2x"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-flickr fa-2x"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-github fa-2x"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-linkedin fa-2x"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-tumblr fa-2x"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="row text-center">
+          <ul class="menu list-inline">
+            <li>
+              <a href="#">My View</a>
+            </li>
+            <li>
+              <a href="#">Friends View</a>
+            </li>
+            <li>
+              <a href="#">Resources View</a>
+            </li>
+            <li>
+              <a href="#">Public View</a>
+            </li>
+            <li>
+              <a href="#">???</a>
+            </li>
+          </ul>
+          <p>FRS © 2018</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Scripts ================================================================================================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/members.js"></script>
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#mytable #checkall").click(function () {
+          if ($("#mytable #checkall").is(':checked')) {
+            $("#mytable input[type=checkbox]").each(function () {
+              $(this).prop("checked", true);
+            });
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/members.js"></script> -->
+          } else {
+            $("#mytable input[type=checkbox]").each(function () {
+              $(this).prop("checked", false);
+            });
+          }
+        });
+
+        // $("[data-toggle=tooltip]").tooltip();
+      });
+    </script>
 
 </body>
 

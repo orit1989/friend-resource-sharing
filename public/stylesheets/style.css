@@ -2,6 +2,91 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
-html {
-  background-image:url(../img/gradient.png);
+.navbar {
+  padding-top: 10px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.search-text {
+  margin-top: 10px;
+  background-color: #7dabdb;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.search-text .input-search {
+  height: 35px;
+  width: 400px;
+  padding-left: 20px;
+  color: #333;
+}
+
+.search-text .btn-search {
+  background-color: #7dabdb;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 11px 22px;
+}
+
+.search-text .btn-search:hover {
+  background-color: #FFF;
+  color: #7dabdb;
+}
+
+.copyright {
+  background-color: #f0f0f0;
+}
+
+.copyright p {
+  margin: 5px 0px;
+}
+
+footer {
+  background-color: #222222;
+  padding: 10px 0px;
+}
+
+footer .menu li a {
+  color: #b1aca1;
+  padding: 10px;
+  text-decoration: none;
+}
+
+footer .menu li a:hover {
+  color: #7dabdb;
+}
+
+.fa.fa-facebook,
+.fa.fa-dropbox,
+.fa.fa-flickr,
+.fa.fa-github,
+.fa.fa-linkedin,
+.fa,
+fa-tumblr,
+.fa.fa-google-plus,
+.fa.fa-tumblr {
+  color: #b1aca1;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.fa.fa-facebook:hover,
+.fa.fa-dropbox:hover,
+.fa.fa-flickr:hover,
+.fa.fa-github:hover,
+.fa.fa-linkedin:hover,
+.fa,
+fa-tumblr:hover,
+.fa.fa-google-plus:hover,
+.fa.fa-tumblr:hover {
+  color: #6794c2;
+}
+
+footer {
+  width: 100%;
 }
