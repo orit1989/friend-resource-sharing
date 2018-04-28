@@ -14,7 +14,7 @@ $(document).ready(function() {
   function createResourceRow(resourceData) {
     var newTr = $("<tr>");
     newTr.data(resourceData);
-    newTr.append("<td>" + resourceData.firstName + ' ' + resourceData.lastName + "</td>");
+    newTr.append("<td>" + resourceData.topic + "</td>");
     newTr.append("<td> " + resourceData.link + "</td>");
     newTr.append("<td> " + resourceData.description + "</td>");     
     return newTr;
@@ -84,6 +84,35 @@ $(document).ready(function() {
       url: "/api/resources/" + id
     })
       .then(getResources);
+  }
+
+  var topicInput = $("#topic");
+  var linkInput = $("#link");
+  var descriptionInput = $("#description");
+
+  // Adding an event listener for when the form is submitted
+  $("#save").on("click", handleNewResource);
+
+  function handleNewResource(event) {
+    event.preventDefault();
+   
+    // Constructing a newPost object to hand to the database
+    var newResource = {
+      topic: topicInput.val().trim(),
+      link: linkInput.val().trim(),
+      description: descriptionInput.val().trim(),
+      isPublic : "false",
+      UserId: window.sessionStorage.getItem("user")
+    };
+
+    submitResource(newResource);
+   
+  }
+
+  function submitResource(resource) {
+    $.post("/api/resources", resource, function() {
+     window.location.href = "/resources";
+    });
   }
 
 getResources(userId);
