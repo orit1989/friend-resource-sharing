@@ -40,14 +40,11 @@
              topic: req.body.topic,
              link: req.body.link,
              description: req.body.description,
-             isPublic: req.body.isPublic
-         }).then(function () {
-             res.redirect(307, "/api/resources");
-         }).catch(function (err) {
-             console.log(err);
-             res.json(err);
-             // res.status(422).json(err.errors[0].message);
-         });
+             isPublic: req.body.isPublic,
+             UserId: JSON.parse(req.body.UserId).id
+         }).then(function (result) {
+             res.json(result)
+         })
      });
 
      // DELETE route for deleting resources
