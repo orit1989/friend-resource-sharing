@@ -24,6 +24,7 @@
          });
      });
 
+     // Route for returning the shared resources
      app.get("/api/resources/:userId/shared", function (req, res) {
          db.User.findById(req.params.userId).then(function (user) {
              user.getSharedResources().then(function (dbResource) {
@@ -39,14 +40,11 @@
              topic: req.body.topic,
              link: req.body.link,
              description: req.body.description,
-             isPublic: req.body.isPublic
-         }).then(function () {
-             res.redirect(307, "/api/resources");
-         }).catch(function (err) {
-             console.log(err);
-             res.json(err);
-             // res.status(422).json(err.errors[0].message);
-         });
+             isPublic: req.body.isPublic,
+             UserId: JSON.parse(req.body.UserId).id
+         }).then(function (result) {
+             res.json(result)
+         })
      });
 
      // DELETE route for deleting resources
@@ -72,7 +70,6 @@
          });
      });
 
-
      // Route for adding the shared resources
      app.post("/api/resources/:id/shared", function (req, res) {
          db.User.findById(req.params.id).then(function (user) {
@@ -82,7 +79,7 @@
          });
      });
 
-     // Route for deleted the shared resources
+     // Route for deleting the shared resources
      app.delete("/api/resources/:id/shared", function (req, res) {
          db.User.findById(req.params.id).then(function (user) {
              user.removeResources([req.body.resouceId]).then(function (dbResource) {
