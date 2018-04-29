@@ -27,9 +27,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Set Handlebars.
-var exphbs = require("express-handlebars");
-app.engine("handlebars", exphbs({ defaultLayout: "resources" }));
-app.set("view engine", "handlebars");
+// var exphbs = require("express-handlebars");
+// app.engine("handlebars", exphbs({ defaultLayout: "resources" }));
+// app.set("view engine", "handlebars");
 
 // Requiring our routes
 require("./routes/api-routes.js")(app);

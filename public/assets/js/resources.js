@@ -102,10 +102,10 @@ $(document).ready(function () {
   }
 
   //Not using handlebars
-  // getResources(userId);
+  getResources(userId);
 
   // Using Handlebars
-  getHBResources(userId);
+  // getHBResources(userId);
 
 
 });
