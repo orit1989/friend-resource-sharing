@@ -33,6 +33,15 @@ $(document).ready(function () {
     });
   }
 
+  function getHBResources(userId) {
+    $.get("/api/resources/" + userId, function(req, res) {
+      var hbsObject = {
+        resources: req.data
+      };
+      res.render("resources", hbsObject);
+    });
+  }
+
   // A function for rendering the list of authors to the page
   function renderResourceList(rows) {
     if (rows.length) {
@@ -92,7 +101,11 @@ $(document).ready(function () {
     });
   }
 
-  // console.log("In resources.js");
-  getResources(userId);
+  //Not using handlebars
+  // getResources(userId);
+
+  // Using Handlebars
+  getHBResources(userId);
+
 
 });
