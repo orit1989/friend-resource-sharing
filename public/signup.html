@@ -46,7 +46,7 @@
     <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
 
     <!--     css     -->
-    <style>
+    <!-- <style>
         .navbar-brand {
             vertical-align: center;
             display: inline-block;
@@ -164,7 +164,7 @@
         footer {
             width: 100%;
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
@@ -173,25 +173,30 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <div class="navbar-brand" href="logo"></div>
-                <img src="assets/img/frs_logo.gif" width="120" height="auto" alt="" />
+                <a href="/">
+                    <img src="assets/img/frs_logo.gif" width="120" height="auto" alt="Friend Resource Finder" />
+                  </a>
             </div>
             <!-- /right .navbar-collapse -->
             <div class="collapse navbar-collapse" id="navbar-brand-centered">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="my_view.html">My View</a>
+                        <a href="/resources">My Resources</a>
                     </li>
                     <li>
-                        <a href="friends_view.html">Friends</a>
+                        <a href="/new">Add Resources</a>
                     </li>
                     <li>
-                        <a href="add_resource.html">Resources</a>
+                        <a href="/shared">Friend Shares</a>
                     </li>
                     <li>
-                        <a href="public_view.html">Public</a>
+                        <a href="/public">Public</a>
                     </li>
                     <li>
-                        <a href="shared.html">Shared</a>
+                        <a href="/friends">Share</a>
+                    </li>
+                    <li>
+                        <a href="/friends">My Shares</a>
                     </li>
                     <!--     login/out     -->
                     <li class="dropdown">

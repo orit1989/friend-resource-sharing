@@ -52,7 +52,7 @@
     <!-- <link href="stylesheets/style.css" rel="stylesheet">   -->
 
     <!--     css     -->
-    <style>
+    <!-- <style>
         .navbar-brand {
             vertical-align: center;
             display: inline-block;
@@ -170,7 +170,7 @@
         footer {
             width: 100%;
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
@@ -179,26 +179,32 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <div class="navbar-brand" href="logo"></div>
-                <img src="assets/img/frs_logo.gif" width="120" height="auto" alt="" />
+                <a href="/">
+                    <img src="assets/img/frs_logo.gif" width="120" height="auto" alt="Friend Resource Finder" />
+                </a>
             </div>
             <!-- /right .navbar-collapse -->
             <div class="collapse navbar-collapse" id="navbar-brand-centered">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="my_view.html">My View</a>
+                        <a href="/resources">My Resources</a>
                     </li>
                     <li>
-                        <a href="friends_view.html">Friends</a>
+                        <a href="/new">Add Resources</a>
                     </li>
                     <li>
-                        <a href="add_resource.html">Resources</a>
+                        <a href="/shared">Friend Shares</a>
                     </li>
                     <li>
-                        <a href="public_view.html">Public</a>
+                        <a href="/public">Public</a>
                     </li>
                     <li>
-                        <a href="shared.html">Shared</a>
+                        <a href="/friends">Share</a>
                     </li>
+                    <li>
+                        <a href="/friends">My Shares</a>
+                    </li>
+                  
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, User
                             <b class="caret"></b>
@@ -246,77 +252,77 @@
             </div>
         </div>
     </div>
-        <!-- FOOTER  ================================================================================================== -->
-        <div class="search-text">
-            <div class="container-fluid">
-                <div class="row text-center">
-                    <div class="form">
-                        <form id="search-form" class="form-search form-horizontal">
-                            <input type="text" class="input-search" placeholder="Search">
-                            <button type="submit" class="btn-search">Search</button>
-                        </form>
-                    </div>
+    <!-- FOOTER  ================================================================================================== -->
+    <div class="search-text">
+        <div class="container-fluid">
+            <div class="row text-center">
+                <div class="form">
+                    <form id="search-form" class="form-search form-horizontal">
+                        <input type="text" class="input-search" placeholder="Search">
+                        <button type="submit" class="btn-search">Search</button>
+                    </form>
                 </div>
             </div>
         </div>
-        <footer>
-            <div class="container-fluid">
-                <div class="row text-center">
-                    <ul class="list-inline">
-                        <li>
-                            <a href="https://www.facebook.com/">
-                                <i class="fa fa-facebook fa-2x"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.dropbox.com">
-                                <i class="fa fa-dropbox fa-2x"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.flickr.com/">
-                                <i class="fa fa-flickr fa-2x"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/">
-                                <i class="fa fa-github fa-2x"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com">
-                                <i class="fa fa-linkedin fa-2x"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.tumblr.com/">
-                                <i class="fa fa-tumblr fa-2x"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="row text-center">
-                    <ul class="menu list-inline">
-                        <li>
-                            <a href="my_view.html">My View</a>
-                        </li>
-                        <li>
-                            <a href="friends_view.html">Friends View</a>
-                        </li>
-                        <li>
-                            <a href="add_resource.html">Resources View</a>
-                        </li>
-                        <li>
-                            <a href="public_view.html">Public View</a>
-                        </li>
-                        <li>
-                            <a href="shared.html">Shared</a>
-                        </li>
-                    </ul>
-                    <p>FRS | Friends Resource Sharing © 2018</p>
-                </div>
+    </div>
+    <footer>
+        <div class="container-fluid">
+            <div class="row text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://www.facebook.com/">
+                            <i class="fa fa-facebook fa-2x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.dropbox.com">
+                            <i class="fa fa-dropbox fa-2x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.flickr.com/">
+                            <i class="fa fa-flickr fa-2x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/">
+                            <i class="fa fa-github fa-2x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com">
+                            <i class="fa fa-linkedin fa-2x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.tumblr.com/">
+                            <i class="fa fa-tumblr fa-2x"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </footer>
+            <div class="row text-center">
+                <ul class="menu list-inline">
+                    <li>
+                        <a href="my_view.html">My View</a>
+                    </li>
+                    <li>
+                        <a href="friends_view.html">Friends View</a>
+                    </li>
+                    <li>
+                        <a href="add_resource.html">Resources View</a>
+                    </li>
+                    <li>
+                        <a href="public_view.html">Public View</a>
+                    </li>
+                    <li>
+                        <a href="shared.html">Shared</a>
+                    </li>
+                </ul>
+                <p>FRS | Friends Resource Sharing © 2018</p>
+            </div>
+        </div>
+    </footer>
     <!-- Scripts ================================================================================================== -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/login.js"></script>
