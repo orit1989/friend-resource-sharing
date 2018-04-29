@@ -19,6 +19,7 @@
     "file-system": "^2.2.2",
     "mysql": "^2.15.0",
     "mysql2": "^1.5.3",
+    "npm": "^6.0.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "sequelize": "^4.37.6"
