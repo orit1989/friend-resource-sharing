@@ -2,6 +2,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
+
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 
@@ -24,6 +25,11 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "resources" }));
+app.set("view engine", "handlebars");
 
 // Requiring our routes
 require("./routes/api-routes.js")(app);

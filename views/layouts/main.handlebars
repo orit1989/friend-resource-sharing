@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Users</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans+Condensed:300,400,700i,800,900" rel="stylesheet">
+
+  <!-- Our Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+
+  <!-- jquery  -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Bootstrap  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link href="https://getbootstrap.com/docs/3.3/examples/sticky-footer-navbar/sticky-footer-navbar.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+<body>
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <div class="navbar-brand" href="logo"></div>
+        <a href="/">
+          <img src="assets/img/frs_logo.gif" width="120" height="auto" alt="Friend Resource Finder" />
+        </a>
+      </div>
+      <!-- /right .navbar-collapse -->
+      <div class="collapse navbar-collapse" id="navbar-brand-centered">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/resources">My Resources</a>
+          </li>
+          <li>
+            <a href="/new">Add Resources</a>
+          </li>
+          <li>
+            <a href="/shared">Friend Shares</a>
+          </li>
+          <li>
+            <a href="/public">Public</a>
+          </li>
+          <li>
+            <a href="/friends">Share</a>
+          </li>
+          <li>
+            <a href="/friends">My Shares</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, User
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/user/preferences">
+                  <i class="icon-cog"></i> Preferences</a>
+              </li>
+              <li>
+                <a href="/help/support">
+                  <i class="icon-envelope"></i> Contact Support</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="/auth/logout">
+                  <i class="icon-off"></i> Logout</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+    {{{ body }}}
+</body>
+
+</html>
+
+
