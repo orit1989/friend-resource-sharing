@@ -25,6 +25,7 @@ module.exports = function (app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/resources", isAuthenticated, function (req, res) {
+    console.log("in resources")
     res.sendFile(path.join(__dirname, "../public/my_view.html"));
   });
 

@@ -9,6 +9,7 @@ $(document).ready(function() {
   });
 
   var user = JSON.parse(window.sessionStorage.getItem("user"));
+  console.log("In resources - ", user.id);
   var userId = user.id; 
   var resourcesList = $("tbody");
   var container = $("container");
@@ -92,6 +93,7 @@ $(document).ready(function() {
     });
   }
 
+  console.log("In resources.js");
 getResources(userId);
 
 });
