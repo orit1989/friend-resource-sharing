@@ -28,7 +28,6 @@ $(document).ready(function() {
     // A function for rendering the list of authors to the page
     function renderResourceList(rows) {
       if (rows.length) {
-        console.log(rows);
         resourcesList.prepend(rows);
       }
       else {

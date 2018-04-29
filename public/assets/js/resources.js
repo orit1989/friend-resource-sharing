@@ -9,7 +9,6 @@ $(document).ready(function () {
   });
 
   var user = JSON.parse(window.sessionStorage.getItem("user"));
-  console.log("In resources - ", user.id);
   var userId = user.id;
   var resourcesList = $("tbody");
   var container = $("container");
@@ -66,8 +65,6 @@ $(document).ready(function () {
   var topicInput = $("#topic");
   var linkInput = $("#link");
   var descriptionInput = $("#description");
-
-  console.log($("topic"));
 
   // Adding an event listener for when the form is submitted
   $("#save").on("click", handleNewResource);
