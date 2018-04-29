@@ -29,7 +29,6 @@ $(document).ready(function() {
       password: password
     }).then(function(data) {
       window.location.replace(data);
-      console.log(data);
       // If there's an error, log the error
     }).catch(function(err) {
       console.log(err);
