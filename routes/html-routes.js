@@ -25,23 +25,11 @@ module.exports = function (app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/resources", isAuthenticated, function (req, res) {
-    console.log("in resources")
     res.sendFile(path.join(__dirname, "../public/my_resources.html"));
   });
 
-  // cms route loads cms.html
-  app.get("/new", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/add_resource.html"));
-  });
-
-  // blog route loads blog.html
-  app.get("/shared", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/shared.html"));
-  });
-
-  // authors route loads author-manager.html
-  app.get("/friends", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/add_friends.html"));
+  app.get("/shared", isAuthenticated, function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/others_resources.html"));
   });
 
 };
