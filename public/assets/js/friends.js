@@ -3,8 +3,9 @@ $(document).ready(function() {
     // and updates the HTML on the page
     
     $.get("/api/user_data").then(function(data) {
-      $(".member-name").text(data.email);
-      window.sessionStorage.setItem( "user", JSON.stringify(data));
+      $(".dropdown-toggle").text("Welcome, " + data.firstName);
+      $(".dropdown-toggle").append("<b class='caret'></b>");
+      window.sessionStorage.setItem("user", JSON.stringify(data));
     });
   
     var user = JSON.parse(window.sessionStorage.getItem("user"));
