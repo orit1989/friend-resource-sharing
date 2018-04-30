@@ -21,7 +21,7 @@
 
 
      // Route for returning the public resources
-     app.get("/api/resources/public", function (req, res) {
+     app.get("/api/public", function (req, res) {
          db.Resource.findAll({
              where: {
                  isPublic: true
@@ -35,6 +35,7 @@
      app.get("/api/resources/:userId/shared", function (req, res) {
          db.User.findById(req.params.userId).then(function (user) {
              user.getSharedResources().then(function (dbResource) {
+                 console.log(JSON.stringify(dbResource));
                  res.json(dbResource);
              })
          });
@@ -42,7 +43,6 @@
 
      // Route for adding the user's resources
      app.post("/api/resources", function (req, res) {
-         console.log(req.body);
          db.Resource.create({
              topic: req.body.topic,
              link: req.body.link,
@@ -79,8 +79,9 @@
 
      // Route for adding the shared resources
      app.post("/api/shared", function (req, res) {
+         console.log("in shared post" + req.body.userToShareId + " resourceId: " + req.body.resourceId);
          db.User.findById(req.body.userToShareId).then(function (user) {
-             user.addResources([req.body.resourceId]).then(function (dbResource) {
+             user.addSharedResources([req.body.resourceId]).then(function (dbResource) {
                  res.json(dbResource);
              })
          });
