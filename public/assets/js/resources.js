@@ -11,7 +11,8 @@ $(document).ready(function () {
 
   var user = JSON.parse(window.sessionStorage.getItem("user"));
   var userId = user.id;
-  var resourcesList = $("tbody");
+  var resourcesList = $("#myTable-body");
+  var userList = $("#sharedTable-body");
   var container = $("container");
 
   function createResourceRow(resourceData) {
@@ -26,7 +27,20 @@ $(document).ready(function () {
     newTr.append("<td> " + resourceData.isPublic + "</td>");
     newTr.append("<td> " + editButton + "</td>");
     newTr.append("<td> " + deleteButton + "</td>");
+    return newTr;
+  }
 
+  function createUserRow(userData) {
+    var newTr = $("<tr>");
+    var button = $("<button>");
+    button.text("Share");
+    button.attr("id", "saveShared");
+    button.attr("data-id", userData.id);
+    newTr.data(userData);
+    newTr.append($("<td>").append(button));
+    newTr.append("<td>" + userData.firstName + "</td>");
+    newTr.append("<td> " + userData.lastName + "</td>");
+    newTr.append("<td> " + userData.email + "</td>");
     return newTr;
   }
 
@@ -85,6 +99,16 @@ $(document).ready(function () {
 
   }
 
+  function getUsers(userId) {
+    $.get("/api/users/", function (data) {
+      var rowsToAdd = [];
+      for (var i = 0; i < data.length; i++) {
+        rowsToAdd.push(createUserRow(data[i]));
+      }
+      renderUserList(rowsToAdd);
+    });
+  }
+
   function getHBResources(userId) {
     $.get("/api/resources/" + userId, function (req, res) {
       var hbsObject = {
@@ -104,6 +128,15 @@ $(document).ready(function () {
     }
   }
 
+  function renderUserList(rows) {
+    if (rows.length) {
+      // console.log(rows);
+      userList.prepend(rows);
+    } else {
+      renderEmpty();
+    }
+  }
+
   // Function for handling what to render when there are no resources
   function renderEmpty() {
     var alertDiv = $("<div>");
@@ -116,14 +149,22 @@ $(document).ready(function () {
   var topicInput = $("#topic");
   var linkInput = $("#link");
   var descriptionInput = $("#description");
+  var isPublicInput = $('#public').is(":checked");
+
+
+  console.log("isPublic: ");
+  console.log(isPublicInput);
+
 
   // Adding an event listener for when the form is submitted
-  $("#save").on("click", handleNewResource);
+  $(document).on("click", "#save", handleNewResource);
+  $(document).on("click", "#saveShared", handleNewShare);
 
   function handleNewResource(event) {
     event.preventDefault();
 
     var resourceId = $(".resourceForm").data("resource-id") || null;
+
 
     // Constructing a newPost object to hand to the database
     var newResource = {
@@ -143,6 +184,20 @@ $(document).ready(function () {
 
   }
 
+  function handleNewShare(event) {
+    event.preventDefault();
+
+    var newShare = {
+      userToShareId: $(this).attr("data-id"),
+    };
+
+    $("#myTable-body :checked").each(function (index) {
+      newShare.resourceId =  $(this).attr("data-id");
+      submitShare(newShare);
+    });
+
+  }
+
   function submitResource(resource) {
     $.post("/api/resources", resource, function () {
       window.location.href = "/resources";
@@ -150,8 +205,15 @@ $(document).ready(function () {
   }
  
 
+  function submitShare(share) {
+    $.post("/api/shared", share, function () {
+
+    });
+  }
+
   //Not using handlebars
   getResources(userId);
+  getUsers();
 
   // Using Handlebars
   // getHBResources(userId);

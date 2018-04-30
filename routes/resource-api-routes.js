@@ -13,6 +13,13 @@
          });
      });
 
+     app.get("/api/users", function (req, res) {
+        db.User.findAll({}).then(function (dbUsers) {
+            res.json(dbUsers);
+        });
+    });
+
+
      // Route for returning the public resources
      app.get("/api/resources/public", function (req, res) {
          db.Resource.findAll({
@@ -71,9 +78,9 @@
      });
 
      // Route for adding the shared resources
-     app.post("/api/resources/:id/shared", function (req, res) {
-         db.User.findById(req.params.id).then(function (user) {
-             user.addResources([req.body.resouceId]).then(function (dbResource) {
+     app.post("/api/shared", function (req, res) {
+         db.User.findById(req.body.userToShareId).then(function (user) {
+             user.addResources([req.body.resourceId]).then(function (dbResource) {
                  res.json(dbResource);
              })
          });

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Add Friends</title>
+    <title>Sign Up Form</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -49,7 +49,7 @@
                         <a href="/resources">My Resources</a>
                     </li>
                     <li>
-                        <a href="/shared">Other's Resources</a>
+                        <a href="/shared">Shared</a>
                     </li>
                     <!--     login/out     -->
                     <li class="dropdown">
@@ -58,16 +58,16 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="/user/preferences">
+                                <a class="dropdown-item" href="/user/preferences">
                                     <i class="icon-cog"></i> Preferences</a>
                             </li>
                             <li>
-                                <a href="/help/support">
+                                <a class="dropdown-item" href="/help/support">
                                     <i class="icon-envelope"></i> Contact Support</a>
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="/auth/logout">
+                                <a class="dropdown-item" href="/auth/logout">
                                     <i class="icon-off"></i> Logout</a>
                             </li>
                         </ul>
@@ -80,7 +80,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <h2>Sign Up Form</h2>
+                <h2>Sign Up</h2>
                 <form class="signup">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
@@ -155,14 +155,6 @@
                 </ul>
             </div>
             <div class="row text-center">
-                <ul class="menu list-inline">
-                    <li>
-                        <a href="/resources">My Resources</a>
-                    </li>
-                    <li>
-                        <a href="/shared">Other's Resources</a>
-                    </li>
-                </ul>
                 <p>FRS | Friends Resource Sharing © 2018</p>
             </div>
         </div>
@@ -171,6 +163,12 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/signup.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
 </body>
 
 </html>

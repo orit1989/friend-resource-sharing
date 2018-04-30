@@ -11,6 +11,10 @@ module.exports = function (app) {
     // if (req.user) {
     //   res.redirect("/my_view");
     // }
+    res.sendFile(path.join(__dirname, "../public/login.html"));
+  });
+
+  app.get("/signup", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
