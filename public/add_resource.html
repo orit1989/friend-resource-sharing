@@ -49,10 +49,24 @@
             <a href="/resources">My Resources</a>
           </li>
           <li>
-            <a href="/shared">Other's Resources</a>
+            <a href="/new">Add Resources</a>
+          </li>
+          <li>
+            <a href="/shared">Friend Shares</a>
+          </li>
+          <li>
+            <a href="/public">Public</a>
+          </li>
+          <li>
+            <a href="/friends">Share</a>
+          </li>
+          <li>
+            <a href="/friends">My Shares</a>
           </li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, User
+              <b class="caret"></b>
+            </a>
             <ul class="dropdown-menu">
               <li>
                 <a href="/user/preferences">
@@ -75,14 +89,14 @@
   </nav>
   <!-- MY RESOURCES ================================================================================================== -->
   <div class="container">
-    <h2>My Resources</h2>
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-8">
+        <h2>My Resources</h2>
         <form class="login">
           <div class="form-group">
             <h4>Add Resource</h4>
             <div>
-              <label for="topic">Topic:</label>
+              <label for="description">Topic:</label>
               <input id="topic" type="text" class="form-control" placeholder="Enter topic">
             </div>
             <br>
@@ -96,72 +110,65 @@
               <textarea id="description" class="form-control" rows="6"></textarea>
             </div>
             <br>
-            <div class="privacy">
+            <a class="btn btn-default" id="save" href="#" role="button" style="margin-right: 10px">SAVE</a>
+            <a class="btn btn-default" id="cancel" href="#" role="button" style="margin-right: 20px">CANCEL</a>
+            <div class="privacy" style="float: right">
               <label>
                 <input type="checkbox" id="public"> Public
               </label>
             </div>
-            <br>
-            <a class="btn btn-default" id="save" href="#" role="button" style="margin-right: 10px">SAVE</a>
-            <a class="btn btn-default" id="cancel" href="#" role="button" style="margin-right: 20px">CANCEL</a>
-
           </div>
         </form>
         <br/>
       </div>
-      <!-- TOPICS ================================================================================================== -->
-      <div class="col-md-9">
-        <br>
-        <br>
-        <h4>My Resources</h4>
-        <div class="table-responsive">
-          <table id="mytable" class="table table-bordered" style="width:100%">
-            <thead>
-              <th>
-              </th>
-              <th>Topic</th>
-              <th>Link</th>
-              <th>Description</th>
-              <th>Public</th>
-              <th>Edit</th>
-              <th>Delete</th>
-            </thead>
-            <tbody id="myTable-body">
-            </tbody>
-          </table>
-        </div>
-
-        <br>
-
-        <!-- ADD FRIENDS ================================================================================================== -->
-
-        <h4>Share With Friends</h4>
-        <form class="shared">
-          <div class="form-group">
-            <div class="table-responsive">
-              <table id="sharedTable" class="table table-bordered" style="width:100%">
-                <thead>
-                  <tr>
-                    <td>
-                    </td>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                  </tr>
-                </thead>
-                <tbody id="sharedTable-body">
-                </tbody>
-              </table>
-            </div>
-            <!-- <a class="btn btn-default" id="save-share" href="#" role="button" style="margin-right: 10px">SAVE</a>
-            <a class="btn btn-default" id="cancel-share" href="#" role="button" style="margin-right: 20px">CANCEL</a> -->
-          </div>
-        </form>
+    </div>
+  </div>
+  <!-- TOPICS ================================================================================================== -->
+  <div class="row">
+    <div class="col-md-12">
+      <h4>My Resources</h4>
+      <div class="table-responsive">
+        <table id="mytable" class="table table-bordered" style="width:100%">
+          <thead>
+            <th>
+              <input type="checkbox" id="checkall" />
+            </th>
+            <th>Topic</th>
+            <th>Link</th>
+            <th>Description</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="checkbox" class="checkthis" />
+              </td>
+              <td>Babies...</td>
+              <td>https://....</td>
+              <td>Blah, blah, blah...</td>
+              <td>
+                <p data-placement="top" data-toggle="tooltip" title="Edit">
+                  <button class="edit btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                  </button>
+                </p>
+              </td>
+              <td>
+                <p data-placement="top" data-toggle="tooltip" title="Delete">
+                  <button id="delete" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete">
+                    <span class="glyphicon glyphicon-trash"></span>
+                  </button>
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
   <!-- FOOTER  ================================================================================================== -->
-  <!-- <div class="search-text">
+  <div class="search-text">
     <div class="container-fluid">
       <div class="row text-center">
         <div class="form">
@@ -172,7 +179,7 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
   <footer class="footer">
     <div class="container-fluid">
       <div class="row text-center">
@@ -212,10 +219,19 @@
       <div class="row text-center">
         <ul class="menu list-inline">
           <li>
-            <a href="/resources">My Resources</a>
+            <a href="my_view.html">My View</a>
           </li>
           <li>
-            <a href="/shared">Other's Resources</a>
+            <a href="friends_view.html">Friends View</a>
+          </li>
+          <li>
+            <a href="add_resource.html">Resources View</a>
+          </li>
+          <li>
+            <a href="public_view.html">Public View</a>
+          </li>
+          <li>
+            <a href="shared.html">Shared</a>
           </li>
         </ul>
         <p>FRS | Friends Resource Sharing © 2018</p>
@@ -225,7 +241,6 @@
   <!-- Scripts ================================================================================================== -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="assets/js/resources.js"></script>
-
 </body>
 
 </html>
