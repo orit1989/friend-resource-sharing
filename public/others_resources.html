@@ -51,7 +51,6 @@
                     <li>
                         <a href="/shared">Other's Resources</a>
                     </li>
-                    <!--     login/out     -->
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, User
                             <b class="caret"></b>
@@ -76,48 +75,67 @@
             </div>
         </div>
     </nav>
-    <!-- Form ================================================================================================== -->
+    <!-- MY RESOURCES ================================================================================================== -->
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h2>Sign Up Form</h2>
-                <form class="signup">
-                    <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" id="firstName-input" placeholder="First name">
+            <div class="col-md-12">
+                <h2>Friends Resources</h2>
+                <div class="table-responsive">
+                    <table id="mytable" class="table table-bordered" style="width:100%">
+                        <thead>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Topic</th>
+                            <th>Link</th>
+                            <th>Description</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Orit</td>
+                                <td>Freud</td>
+                                <td>Babies...</td>
+                                <td>https://....</td>
+                                <td>Blah, blah, blah...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Public Resources</h2>
+                            <div class="table-responsive">
+                                <table id="example" class="table table-bordered" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Topic</th>
+                                            <th>Link</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                    <br>
-                    <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" id="lastName-input" placeholder="Last name">
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="email-input" placeholder="Email">
-                    </div>
-                    <br>
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="password-input" placeholder="Password">
-                    <br>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-default">Sign Up</button>
-                    </div>
-                    <br>
-                    <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                        <span class="sr-only">Error:</span>
-                        <span class="msg"></span>
-                    </div>
-                </form>
-                <br />
-                <p>Or log in
-                    <a href="/login">here</a>
-                </p>
+                </div>
             </div>
         </div>
     </div>
+
     <!-- FOOTER  ================================================================================================== -->
+    <!-- <div class="search-text">
+        <div class="container-fluid">
+            <div class="row text-center">
+                <div class="form">
+                    <form id="search-form" class="form-search form-horizontal">
+                        <input type="text" class="input-search" placeholder="Search">
+                        <button type="submit" class="btn-search">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> -->
     <footer class="footer">
         <div class="container-fluid">
             <div class="row text-center">
@@ -168,9 +186,9 @@
         </div>
     </footer>
     <!-- Scripts ================================================================================================== -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/signup.js"></script>
+    <script type="text/javascript" src="assets/js/friends.js"></script>
+
 </body>
 
 </html>
