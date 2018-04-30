@@ -113,8 +113,8 @@
       </div>
       <!-- TOPICS ================================================================================================== -->
       <div class="col-md-9">
-        </br>
-        </br>
+        <br>
+        <br>
         <h4>My Resources</h4>
         <div class="table-responsive">
           <table id="mytable" class="table table-bordered" style="width:100%">
@@ -128,34 +128,12 @@
               <th>Edit</th>
               <th>Delete</th>
             </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <input type="checkbox" class="checkthis" />
-                </td>
-                <td>Babies...</td>
-                <td>https://....</td>
-                <td>Blah, blah, blah...</td>
-                <td>false</td>
-                <td>
-                  <p data-placement="top" data-toggle="tooltip" title="Edit">
-                    <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit">
-                      <span class="glyphicon glyphicon-pencil"></span>
-                    </button>
-                  </p>
-                </td>
-                <td>
-                  <p data-placement="top" data-toggle="tooltip" title="Delete">
-                    <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete">
-                      <span class="glyphicon glyphicon-trash"></span>
-                    </button>
-                  </p>
-                </td>
-              </tr>
+            <tbody id="myTable-body">
             </tbody>
           </table>
         </div>
 
+        <br>
 
         <!-- ADD FRIENDS ================================================================================================== -->
 
@@ -163,23 +141,22 @@
         <form class="shared">
           <div class="form-group">
             <div class="table-responsive">
-              <table id="example" class="table table-bordered" style="width:100%">
+              <table id="sharedTable" class="table table-bordered" style="width:100%">
                 <thead>
                   <tr>
                     <td>
-                      <input type="checkbox" class="checkthis" />
                     </td>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="sharedTable-body">
                 </tbody>
               </table>
             </div>
-            <a class="btn btn-default" id="save" href="#" role="button" style="margin-right: 10px">SAVE</a>
-            <a class="btn btn-default" id="cancel" href="#" role="button" style="margin-right: 20px">CANCEL</a>
+            <!-- <a class="btn btn-default" id="save-share" href="#" role="button" style="margin-right: 10px">SAVE</a>
+            <a class="btn btn-default" id="cancel-share" href="#" role="button" style="margin-right: 20px">CANCEL</a> -->
           </div>
         </form>
       </div>
@@ -250,6 +227,22 @@
   <!-- Scripts ================================================================================================== -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="assets/js/resources.js"></script>
+
+  <!-- <script>
+    $(document).ready(function () {
+      $("#mytable .checkThis").click(function () {
+        console.log('checked my')
+      });
+
+      $("#sharedTable .checkThis").click(function () {
+        console.log('checked shared')
+      });
+      // $("#mytable #checkall").click(function () {
+      //         $("#mytable input[type=checkbox]").each(function () {
+      //             $(this).prop("checked", false);
+      // });
+    });
+  </script> -->
 </body>
 
 </html>
