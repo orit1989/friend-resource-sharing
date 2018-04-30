@@ -41,7 +41,7 @@
              link: req.body.link,
              description: req.body.description,
              isPublic: req.body.isPublic,
-             UserId: JSON.parse(req.body.UserId).id
+             UserId: req.body.UserId
          }).then(function (result) {
              res.json(result)
          })
@@ -59,11 +59,11 @@
      });
 
      // PUT route for updating posts
-     app.put("/api/resources", function (req, res) {
+     app.put("/api/resources/:id", function (req, res) { 
          db.Resource.update(
              req.body, {
                  where: {
-                     id: req.body.id
+                     id: req.params.id
                  }
              }).then(function (dbResource) {
              res.json(dbResource);
