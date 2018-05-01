@@ -161,13 +161,13 @@ body {
 }
 #mytable, #example {
   background-color: white;
-  color: black;
-  border-color: black;
+  color: #555;
+  border-color: #ccc;
 }
 #addr_bk, #myres_bk {
   background-color: black;
-  color: black;
-  border-color: black;
+  color: #555;
+  border-color: #ccc;
   padding: 20px;
   margin: 0 auto;
 }
@@ -176,21 +176,21 @@ body {
 }
 .resourceForm{
   background-color: black;
-  color: black;
+  color: white;
   border-color: black;
   padding: 20px;
   margin: 0 auto;
 }
 #mytable{
-  background-color: black;
-  color: black;
+  background-color: white;
+  color:#555;
   border-color: black;
   padding: 20px;
   margin: 0 auto;
 }
 .shared{
   background-color: black;
-  color: black;
+  color: #555;
   border-color: black;
   padding: 20px;
   margin: 0 auto;
@@ -199,4 +199,21 @@ body {
 #sharedTable-body {
   background-color: white;
 }
-/* background-color: rgba(0, 0, 0, 0.4); */
+#sharedTable {
+  background-color: white;
+}
+#myres_bk {
+  background-color: black;
+  padding: 20px;
+  margin: 0 auto;
+}
+#public { 
+  color: white;
+}
+.dropdown-menu {
+  color: white;
+  bacground-color: rgba(0, 0, 0, 0.4);
+}
+.footer {
+  position: relative;
+}
