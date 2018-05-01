@@ -10,48 +10,91 @@ $(document).ready(function() {
   
     var user = JSON.parse(window.sessionStorage.getItem("user"));
     var userId = user.id; 
-    var resourcesList = $("tbody");
+    var friendsList = $("#friends-table");
+    var publicList = $("#public-table");
     var container = $("container");
   
-    function createResourceRow(resourceData) {
+    function createFriendsRow(resourceData) {
       var newTr = $("<tr>");
       newTr.data(resourceData);
-      newTr.append("<td>" + resourceData.firstName + ' ' + resourceData.lastName + "</td>");
-      newTr.append("<td> " + resourceData.link + "</td>");
-      newTr.append("<td> " + resourceData.description + "</td>");     
+      newTr.append($("<td>").append(resourceData.firstName)); 
+      newTr.append($("<td>").append(resourceData.lastName)); 
+      newTr.append($("<td>").append(resourceData.topic)); 
+      newTr.append($("<td>").append(resourceData.link)); 
+      newTr.append($("<td>").append(resourceData.description));    
       return newTr;
     }
-  
+
+    function createPublicRow(resourceData) {
+      var newTr = $("<tr>");
+      newTr.data(resourceData);
+       newTr.append($("<td>").append(resourceData.topic)); 
+      newTr.append($("<td>").append(resourceData.link)); 
+      newTr.append($("<td>").append(resourceData.description));    
+      return newTr;
+    }
+
+
     // Function for retrieving shared resources and getting them ready to be rendered to the page
-    function getSharedResources(userId) {
+    function getFriendsResources(userId) {
       $.get("/api/resources/" + userId + "/shared", function(data) {
         var rowsToAdd = [];
         for (var i = 0; i < data.length; i++) {
-          rowsToAdd.push(createResourceRow(data[i]));
+          rowsToAdd.push(createFriendsRow(data[i]));
         }
-        renderResourceList(rowsToAdd);
+        renderFriendsList(rowsToAdd);
+       });
+    }
+
+    function getPublicResources() {
+      $.get("/api/public", function(data) {
+        var rowsToAdd = [];
+        for (var i = 0; i < data.length; i++) {
+          rowsToAdd.push(createPublicRow(data[i]));
+        }
+        renderPublicList(rowsToAdd);
        });
     }
   
     // A function for rendering the list of authors to the page
-    function renderResourceList(rows) {
+    function renderFriendsList(rows) {
       if (rows.length) {
-        resourcesList.prepend(rows);
+        friendsList.prepend(rows);
       }
       else {
-        renderEmpty();
+        renderFriendsEmpty();
+      }
+    }
+
+    function renderPublicList(rows) {
+      if (rows.length) {
+        publicList.prepend(rows);
+      }
+      else {
+        renderPublicEmpty();
       }
     }
   
     // Function for handling what to render when there are no resources
-    function renderEmpty() {
+    function renderFriendsEmpty() {
       var alertDiv = $("<div>");
       alertDiv.addClass("alert alert-danger");
-      alertDiv.text("Please create a resource.");
+      alertDiv.text("No Friends Resources to display.");
+      container.append(alertDiv);
+    }
+
+
+    // Function for handling what to render when there are no resources
+    function renderPublicEmpty() {
+      var alertDiv = $("<div>");
+      alertDiv.addClass("alert alert-danger");
+      alertDiv.text("No Public Resources to display.");
       container.append(alertDiv);
     }
   
-    getSharedResources(userId);
+  
+    getFriendsResources(userId);
+    getPublicResources();
   
   });
   
