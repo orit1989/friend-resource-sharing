@@ -1,35 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Sign Up Form</title>
-    <meta charset="UTF-8">
+<!-- saved from url=(0072)file:///Users/gxe4441/bootcamp/friend-resource-sharing/public/login.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Login Form</title>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--     Fonts and icons     -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./Login Form_files/icon">
+    <link rel="stylesheet" type="text/css" href="./Login Form_files/css">
+    <link rel="stylesheet" href="./Login Form_files/font-awesome.min.css">
 
     <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans+Condensed:300,400,700i,800,900" rel="stylesheet">
+    <link href="./Login Form_files/css(1)" rel="stylesheet">
 
     <!-- jquery  -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./Login Form_files/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="./Login Form_files/jquery.min.js"></script>
 
     <!-- Bootstrap  -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link href="https://getbootstrap.com/docs/3.3/examples/sticky-footer-navbar/sticky-footer-navbar.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Login Form_files/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="./Login Form_files/sticky-footer-navbar.css" rel="stylesheet">
 
     <!-- Footer -->
-    <link href="https://getbootstrap.com/docs/3.3/examples/sticky-footer-navbar/sticky-footer-navbar.css" rel="stylesheet">
+    <link href="./Login Form_files/sticky-footer-navbar.css" rel="stylesheet">
 
     <!-- Our Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/style.css" type="text/css"> -->
+    <link href="./Login Form_files/style.css" type="text/css" rel="stylesheet">
+    <!-- <style>
+        body {
+            background-image: url("assets/img/blurred_background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
+        .h1,
+        .h2,
+        .h3,
+        .h4,
+        .h5,
+        .h6,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: white;
+        }
+
+        body {
+            color: white;
+        }
+
+        .footer {
+            border-top: 2px;
+            border-top-color: white;
+            border-top-style: solid;
+            min-height: 100px;
+        }
+
+        .navbar {
+            border-bottom: 2px;
+            border-bottom-color: white;
+            border-bottom-style: solid;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .navbar ul {
+            color: black !important;
+            padding-right: 10px;
+        }
+
+        #login_bk {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            margin: 0 auto;
+        }
+    </style> -->
 </head>
 
 <body>
@@ -38,27 +86,27 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <div class="navbar-brand" href="logo"></div>
-                <a href="/">
-                    <img src="assets/img/frs_logo3.gif" width="140" height="auto" alt="Friend Resource Finder" />
+                <a href="file:///">
+                    <img src="./Login Form_files/frs_logo3.gif" width="140" height="auto" alt="Friend Resource Finder">
                 </a>
             </div>
             <!-- /right .navbar-collapse -->
             <div class="collapse navbar-collapse" id="navbar-brand-centered">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">Welcome, User
+                        <a href="file:///Users/gxe4441/bootcamp/friend-resource-sharing/public/login.html#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">Welcome, User
                             <span class="glyphicon glyphicon-menu-hamburger" style="padding-left: 10px"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="/resources">My Resources</a>
+                                <a href="file:///resources">My Resources</a>
                             </li>
                             <li>
-                                <a href="/shared">Shared</a>
+                                <a href="file:///shared">Shared</a>
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="/auth/logout">
+                                <a href="file:///auth/logout">
                                     <i class="icon-off"></i> Logout</a>
                             </li>
                         </ul>
@@ -67,44 +115,26 @@
             </div>
         </div>
     </nav>
-    <!-- Form ================================================================================================== -->
+    <!-- LOGIN ================================================================================================== -->
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <div id="signup_bk">
-                    <h2>Sign Up</h2>
-                    <form class="signup">
-                        <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" class="form-control" id="firstName-input" placeholder="First name">
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" class="form-control" id="lastName-input" placeholder="Last name">
-                        </div>
-                        <br>
+                <div id="login_bk">
+                    <h4>Login</h4>
+                    <form class="login">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" id="email-input" placeholder="Email">
                         </div>
-                        <br>
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="password-input" placeholder="Password">
-                        <br>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-default">Sign Up</button>
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="password-input" placeholder="Password">
                         </div>
-                        <br>
-                        <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                            <span class="sr-only">Error:</span>
-                            <span class="msg"></span>
-                        </div>
+                        <button type="submit" class="btn btn-default btn-xs">Login</button>
                     </form>
-                    <br />
-                    <p>Or log in
-                        <a href="/login">here</a>
+                    <br>
+                    <p>Or sign up
+                        <a href="file:///signup">here</a>
                     </p>
                 </div>
             </div>
@@ -121,7 +151,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.dropbox.com">
+                        <a href="https://www.dropbox.com/">
                             <i class="fa fa-dropbox fa-2x"></i>
                         </a>
                     </li>
@@ -136,7 +166,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com">
+                        <a href="https://www.linkedin.com/">
                             <i class="fa fa-linkedin fa-2x"></i>
                         </a>
                     </li>
@@ -154,16 +184,16 @@
         </div>
     </footer>
     <!-- Scripts ================================================================================================== -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/login.js"></script>
+    <script src="./Login Form_files/jquery.min.js"></script>
+    <script type="text/javascript" src="./Login Form_files/login.js"></script>
 
     <script>
-        $(document).ready(function () {
+        // $(document).ready(function () {
 
-            $('.dropdown').click(function () {
-                $(this).find('.dropdown-menu').toggle();
-            })
-        })
+        //     $('.dropdown').click(function () {
+        //         $(this).find('.dropdown-menu').toggle();
+        //     })
+        // })
         $(document).ready(function () {
 
             $('.dropdown').mouseenter(function () {
@@ -175,6 +205,6 @@
         })
     </script>
 
-</body>
 
-</html>
+
+</body></html>

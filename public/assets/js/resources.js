@@ -77,7 +77,15 @@ $(document).ready(function () {
   }
 
   $(document).on("click", ".delete", function () {
-    $(this).parent().parent().remove();
+    let resourceId = $(this).val();
+    $("#" + resourceId).remove(); 
+    $.ajax({
+      method: "DELETE",
+      url: "/api/resources/" + resourceId
+    })
+    .then(function (res) {
+      window.location.href = "/resources";
+    })
   })
 
   // Function for retrieving  resources and getting them ready to be rendered to the page
