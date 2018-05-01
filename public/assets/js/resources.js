@@ -18,6 +18,10 @@ $(document).ready(function () {
 
   function createResourceRow(resourceData) {
     var newTr = $("<tr id='" + resourceData.id + "'>");
+    var checkbox = $("<input>");
+    checkbox.attr("type", "checkbox");
+    checkbox.addClass("checkThis");
+    checkbox.attr("data-id", resourceData.id);
     newTr.data(resourceData);
     var editButton = '<p data-placement="top" data-toggle="tooltip" title="Edit"><button ' + 'value="' + resourceData.id + '" class="edit btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>';
     var deleteButton = '<p data-placement="top" data-toggle="tooltip" title="Delete"> <button ' + 'value="' + resourceData.id + '" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p>';
@@ -75,18 +79,6 @@ $(document).ready(function () {
   $(document).on("click", ".delete", function () {
     $(this).parent().parent().remove();
   })
-
-  // function deleteResource() {
-  //   var listItemData = $(this).parent("td").parent("tr").data("resource");
-  //   var id = listItemData.id;
-  //   $.ajax({
-  //       method: "DELETE",
-  //       url: "/api/resources/" + resource.resourceId
-  //     })
-  //     .then(function (res) {
-  //       window.location.href = "/resources";
-  //     })
-  // }
 
   // Function for retrieving  resources and getting them ready to be rendered to the page
   function getResources(userId) {
@@ -164,7 +156,7 @@ $(document).ready(function () {
       topic: topicInput.val().trim(),
       link: linkInput.val().trim(),
       description: descriptionInput.val().trim(),
-      isPublic: "false",
+      isPublic: isPublicInput,
       UserId: userId,
       resourceId: resourceId
     };
@@ -180,18 +172,12 @@ $(document).ready(function () {
   function handleNewShare(event) {
     event.preventDefault();
 
-    // $("#myTable-body :checked").each(function (each) {
-    //   console.log('index' + ": ");
-    //   console.log($(this).attr("data"));
-    // });
-
     var newShare = {
       userToShareId: $(this).attr("data-id"),
     };
 
     $("#myTable-body :checked").each(function (index) {
       newShare.resourceId = $(this).attr("data-id");
-      console.log(newShare);
       submitShare(newShare);
     });
 
