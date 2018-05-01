@@ -117,7 +117,7 @@ body {
 }
 
 body {
-    background-image: url("blur_4.png");
+    background-image: url("background_2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -167,4 +167,7 @@ body {
   border-color: black;
   padding: 20px;
   margin: 0 auto;
+}
+.label {
+  color: white;
 }
