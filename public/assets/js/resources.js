@@ -36,17 +36,20 @@ $(document).ready(function () {
   }
 
   function createUserRow(userData) {
-    var newTr = $("<tr>");
-    var button = $("<button>");
-    button.text("Share");
-    button.attr("id", "saveShared");
-    button.attr("data-id", userData.id);
-    newTr.data(userData);
-    newTr.append($("<td>").append(button));
-    newTr.append("<td>" + userData.firstName + "</td>");
-    newTr.append("<td> " + userData.lastName + "</td>");
-    newTr.append("<td> " + userData.email + "</td>");
-    return newTr;
+    var id = userData.id;
+    if (id != userId) {
+      var newTr = $("<tr>");
+      var button = $("<button>");
+      button.text("Share");
+      button.attr("id", "saveShared");
+      button.attr("data-id", id);
+      newTr.data(userData);
+      newTr.append($("<td>").append(button));
+      newTr.append("<td>" + userData.firstName + "</td>");
+      newTr.append("<td> " + userData.lastName + "</td>");
+      newTr.append("<td> " + userData.email + "</td>");
+      return newTr;
+    }
   }
 
   var editedResource;
@@ -78,16 +81,15 @@ $(document).ready(function () {
   }
 
   $(document).on("click", ".delete", function () {
-    console.log( "DELETE" );
     let resourceId = $(this).val();
-    $("#" + resourceId).remove(); 
+    $("#" + resourceId).remove();
     $.ajax({
-      method: "DELETE",
-      url: "/api/resources/" + resourceId
-    })
-    .then(function (res) {
-      window.location.href = "/resources";
-    })
+        method: "DELETE",
+        url: "/api/resources/" + resourceId
+      })
+      .then(function (res) {
+        window.location.href = "/resources";
+      })
   })
 
   // Function for retrieving  resources and getting them ready to be rendered to the page
@@ -106,7 +108,9 @@ $(document).ready(function () {
     $.get("/api/users/", function (data) {
       var rowsToAdd = [];
       for (var i = 0; i < data.length; i++) {
-        rowsToAdd.push(createUserRow(data[i]));
+        if (data[i].id != userId) {
+          rowsToAdd.push(createUserRow(data[i]));
+        }
       }
       renderUserList(rowsToAdd);
     });
@@ -124,7 +128,6 @@ $(document).ready(function () {
 
   function renderResourceList(rows) {
     if (rows.length) {
-      // console.log(rows);
       resourcesList.prepend(rows);
     } else {
       renderEmpty();
@@ -133,7 +136,6 @@ $(document).ready(function () {
 
   function renderUserList(rows) {
     if (rows.length) {
-      // console.log(rows);
       userList.prepend(rows);
     } else {
       renderEmpty();
