@@ -2,24 +2,18 @@ $(document).ready(function () {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
 
-  var user = JSON.parse(window.sessionStorage.getItem("user"));
-  var userId = user.id || null;
-
-  if (!user) {
-    $.get("/api/user_data").then(function (data) {
-      $(".dropdown-toggle").text("Welcome, " + data.firstName);
-      $(".dropdown-toggle").append("<b class='caret'></b>");
-      window.sessionStorage.setItem("user", JSON.stringify(data));
-      user = data;
-      userId = data.id;
-
-      getResources(userId);
-      getUsers();
-    });
-  } else {
+  $.get("/api/user_data").then(function (data) {
+    $(".dropdown-toggle").text("Welcome, " + data.firstName);
+    $(".dropdown-toggle").append("<b class='caret'></b>");
+    window.sessionStorage.setItem("user", JSON.stringify(data));
+    var user = data;
+    var userId = user.id;
     getResources(userId);
     getUsers();
-  }
+  });
+
+  var user = JSON.parse(window.sessionStorage.getItem("user"));
+  var userId = user.id;
 
   var resourcesList = $("#myTable-body");
   var userList = $("#sharedTable-body");
