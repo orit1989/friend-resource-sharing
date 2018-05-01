@@ -34,7 +34,9 @@
      // Route for returning the shared resources
      app.get("/api/resources/:userId/shared", function (req, res) {
          db.User.findById(req.params.userId).then(function (user) {
-             user.getSharedResources().then(function (dbResource) {
+             user.getSharedResources({
+                 include: [db.User]
+             }).then(function (dbResource) {
                  console.log(JSON.stringify(dbResource));
                  res.json(dbResource);
              })
