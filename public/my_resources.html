@@ -2,92 +2,71 @@
 <html lang="en">
 
 <head>
-  <title>My Resources</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Resources</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!--     Fonts and icons     -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
 
-  <!-- Google fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans+Condensed:300,400,700i,800,900" rel="stylesheet">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans+Condensed:300,400,700i,800,900" rel="stylesheet">
 
-  <!-- jquery  -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- jquery  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <!-- Bootstrap  -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-      crossorigin="anonymous">
-  <link href="https://getbootstrap.com/docs/3.3/examples/sticky-footer-navbar/sticky-footer-navbar.css" rel="stylesheet">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/3.3/examples/sticky-footer-navbar/sticky-footer-navbar.css" rel="stylesheet">
 
-  <!-- Footer -->
-  <link href="https://getbootstrap.com/docs/3.3/examples/sticky-footer-navbar/sticky-footer-navbar.css" rel="stylesheet">
+    <!-- Footer -->
+    <link href="https://getbootstrap.com/docs/3.3/examples/sticky-footer-navbar/sticky-footer-navbar.css" rel="stylesheet">
 
-  <!-- Our Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Our Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
 <body>
     <!-- NAV BAR================================================================================================== -->
     <nav class="navbar navbar-default">
-      <div class="container-fluid">
-          <div class="navbar-header">
-              <div class="navbar-brand" href="logo"></div>
-              <a href="/">
-                  <img src="assets/img/frs_logo3.gif" width="140" height="auto" alt="Friend Resource Finder" />
-              </a>
-          </div>
-          <!-- /right .navbar-collapse -->
-          <div class="collapse navbar-collapse" id="navbar-brand-centered">
-              <ul class="nav navbar-nav navbar-right">
-                  <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">
-                          <span class="glyphicon glyphicon-menu-hamburger" style="padding-left: 10px"></span>
-                      </a>
-                      <ul class="dropdown-menu">
-                          <li>
-                              <a href="/resources">My Resources</a>
-                          </li>
-                          <li>
-                              <a href="/shared">Shared</a>
-                          </li>
-                          <li class="divider"></li>
-                          <li>
-                              <a href="/logout">
-                                  <i class="icon-off"></i> Logout</a>
-                          </li>
-                      </ul>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </nav>
-  <!-- MY RESOURCES ================================================================================================== -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <form class="resourceForm">
-          <div class="form-group">
-            <h4>Add Resource</h4>
-            <div>
-              <label for="topic">Topic:</label>
-              <input id="topic" type="text" class="form-control" placeholder="Enter topic"/>
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="navbar-brand" href="logo"></div>
+                <a href="/">
+                    <img src="assets/img/frs_logo3.gif" width="140" height="auto" alt="Friend Resource Finder" />
+                </a>
             </div>
-            <br>
-            <div>
-              <label for="link">Link:</label>
-              <input id="link" type="url" class="form-control" placeholder="http://">
+            <!-- /right .navbar-collapse -->
+            <div class="collapse navbar-collapse" id="navbar-brand-centered">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">
+                            <span class="glyphicon glyphicon-menu-hamburger" style="padding-left: 10px"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/resources">My Resources</a>
+                            </li>
+                            <li>
+                                <a href="/shared">Shared</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="/logout">
+                                    <i class="icon-off"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <br>
-            <div>
-              <label for="description">Description:</label>
-              <textarea id="description" class="form-control" rows="6"></textarea>
-            </div>
+<<<<<<< HEAD
+=======
             <br>
             <div class="privacy">
               <label>
@@ -121,80 +100,135 @@
             <tbody id="myTable-body">
             </tbody>
           </table>
+>>>>>>> 4dff0738dfe7f5e20ae792402ca1f22c8df790c5
         </div>
-
-        <br>
-
-        <!-- ADD FRIENDS ================================================================================================== -->
-
-        <h4>Share With Friends</h4>
-        <form class="shared">
-          <div class="form-group">
-            <div class="table-responsive">
-              <table id="sharedTable" class="table table-bordered" style="width:100%">
-                <thead>
-                  <tr>
-                    <td>
-                    </td>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                  </tr>
-                </thead>
-                <tbody id="sharedTable-body">
-                </tbody>
-              </table>
+    </nav>
+    <!-- MY RESOURCES ================================================================================================== -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <form class="resourceForm">
+                    <div class="form-group">
+                        <h4>Add Resource</h4>
+                        <div>
+                            <label for="topic">Topic:</label>
+                            <input id="topic" type="text" class="form-control" placeholder="Enter topic" />
+                        </div>
+                        <br>
+                        <div>
+                            <label for="link">Link:</label>
+                            <input id="link" type="url" class="form-control" placeholder="http://">
+                        </div>
+                        <br>
+                        <div>
+                            <label for="description">Description:</label>
+                            <textarea id="description" class="form-control" rows="6"></textarea>
+                        </div>
+                        <br>
+                        <div class="privacy">
+                            <label>
+                                <input id="public" type="checkbox"> Public
+                            </label>
+                        </div>
+                        <br>
+                        <a class="btn btn-default" id="save" href="#" role="button" style="margin-right: 10px">SAVE</a>
+                    </div>
+                </form>
+                <br/>
             </div>
-            <!-- <a class="btn btn-default" id="save-share" href="#" role="button" style="margin-right: 10px">SAVE</a>
+            <!-- TOPICS ================================================================================================== -->
+            <div class="col-md-9">
+                <div id="myres_bk">
+                    <h4>My Resources</h4>
+                    <div class="table-responsive">
+                        <table id="mytable" class="table table-bordered" style="width:100%">
+                            <thead>
+                                <th>
+                                </th>
+                                <th>Topic</th>
+                                <th>Link</th>
+                                <th>Description</th>
+                                <th>Public</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </thead>
+                            <tbody id="myTable-body">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <br>
+
+                    <!-- ADD FRIENDS ================================================================================================== -->
+
+                    <h4>Share With Friends</h4>
+                    <form class="shared">
+                        <div class="form-group">
+                            <div class="table-responsive">
+                                <table id="sharedTable" class="table table-bordered" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <td>
+                                            </td>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Email</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="sharedTable-body">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- <a class="btn btn-default" id="save-share" href="#" role="button" style="margin-right: 10px">SAVE</a>
             <a class="btn btn-default" id="cancel-share" href="#" role="button" style="margin-right: 20px">CANCEL</a> -->
-          </div>
-        </form>
-      </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
     <!-- FOOTER  ================================================================================================== -->
     <footer class="footer">
-      <div class="container-fluid">
-          <div class="row text-center">
-              <ul class="list-inline">
-                  <li>
-                      <a href="https://www.facebook.com/">
-                          <i class="fa fa-facebook fa-2x"></i>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="https://www.dropbox.com">
-                          <i class="fa fa-dropbox fa-2x"></i>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="https://www.flickr.com/">
-                          <i class="fa fa-flickr fa-2x"></i>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="https://github.com/">
-                          <i class="fa fa-github fa-2x"></i>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="https://www.linkedin.com">
-                          <i class="fa fa-linkedin fa-2x"></i>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="https://www.tumblr.com/">
-                          <i class="fa fa-tumblr fa-2x"></i>
-                      </a>
-                  </li>
-              </ul>
-              <span id="copyright_text">
-                  <p>FRS | Friends Resource Sharing © 2018</p>
-              </span>
-          </div>
-
-      </div>
-  </footer>
+        <div class="container-fluid">
+            <div class="row text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook fa-2x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.dropbox.com" target="_blank">
+                            <i class="fa fa-dropbox fa-2x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.flickr.com/" target="_blank">
+                            <i class="fa fa-flickr fa-2x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/" target="_blank">
+                            <i class="fa fa-github fa-2x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com" target="_blank">
+                            <i class="fa fa-linkedin fa-2x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.tumblr.com/" target="_blank">
+                            <i class="fa fa-tumblr fa-2x"></i>
+                        </a>
+                    </li>
+                </ul>
+                <span id="copyright_text">
+                    <p>FRS | Friends Resource Sharing © 2018</p>
+                </span>
+            </div>
+        </div>
+    </footer>
     <!-- Scripts ================================================================================================== -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/login.js"></script>
