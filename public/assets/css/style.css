@@ -29,7 +29,7 @@ form.login {
     display: block;
     width: 160px;
     text-align: center;
-    background-color: rgba(0,0,0,0.4);
+    background-color: black;
   }
   .navbar>.container .navbar-brand-centered,
   .navbar>.container-fluid .navbar-brand-centered {
@@ -45,7 +45,7 @@ body {
   background-repeat: no-repeat;
 }
 .copyright {
-  background: rgba(0,0,0,0.4);
+  background: black;
 }
 
 .copyright p {
@@ -53,18 +53,18 @@ body {
 }
 
 footer {
-  background-color: #222222;
+  background-color: black;
   padding: 10px 0px;
 }
 
 footer .menu li a {
-  color: #b1aca1;
+  color: white;
   padding: 10px;
   text-decoration: none;
 }
 
 footer .menu li a:hover {
-  color: #7dabdb;
+  color: #f90;
 }
 
 .fa.fa-facebook,
@@ -76,7 +76,7 @@ footer .menu li a:hover {
 fa-tumblr,
 .fa.fa-google-plus,
 .fa.fa-tumblr {
-  color: #b1aca1;
+  color: white;
   font-size: 20px;
   padding: 10px;
 }
@@ -90,16 +90,16 @@ fa-tumblr,
 fa-tumblr:hover,
 .fa.fa-google-plus:hover,
 .fa.fa-tumblr:hover {
-  color: #6794c2;
+  color: #f90;
 }
 
 .footer {
   width: 100%;
-  background-color: rgba(0,0,0,0.4);
+  background-color:black;
 }
 #copyright_text {
-  background-color: rgba(0,0,0,0.4);
-  color: #b1aca1;
+  background-color: black;
+  color: white;
   font-size: 12px;
   margin: 0;
 }
@@ -123,17 +123,20 @@ body {
 }
 
 .footer {
-    border-top: 2px;
-    border-top-color: white;
+    border-top: 5px;
+    border-top-color: #f90;
     border-top-style: solid;
     min-height: 100px;
 }
 
 .navbar {
-    border-bottom: 2px;
-    border-bottom-color: white;
+    border-bottom: 5px;
+    border-bottom-color:#f90;
     border-bottom-style: solid;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: black;
+    border-left: black;
+    border-right: black;
+    border-top: black;
 }
 
 .navbar ul {
@@ -142,17 +145,17 @@ body {
 }
 
 #login_bk {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: black;
     padding: 20px;
     margin: 0 auto;
 }
 #signup_bk {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: black;
   padding: 20px;
   margin: 0 auto;
 }
 #public_bk {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: black;
   padding: 20px;
   margin: 0 auto;
 }
@@ -162,7 +165,7 @@ body {
   border-color: black;
 }
 #addr_bk, #myres_bk {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: black;
   color: black;
   border-color: black;
   padding: 20px;
@@ -171,3 +174,29 @@ body {
 .label {
   color: white;
 }
+.resourceForm{
+  background-color: black;
+  color: black;
+  border-color: black;
+  padding: 20px;
+  margin: 0 auto;
+}
+#mytable{
+  background-color: black;
+  color: black;
+  border-color: black;
+  padding: 20px;
+  margin: 0 auto;
+}
+.shared{
+  background-color: black;
+  color: black;
+  border-color: black;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+#sharedTable-body {
+  background-color: white;
+}
+/* background-color: rgba(0, 0, 0, 0.4); */
