@@ -16,7 +16,6 @@ $(document).ready(function() {
   
     function createFriendsRow(resourceData) {
       var newTr = $("<tr>");
-      newTr.data(resourceData);
       newTr.append($("<td>").append(resourceData.firstName)); 
       newTr.append($("<td>").append(resourceData.lastName)); 
       newTr.append($("<td>").append(resourceData.topic)); 
@@ -27,8 +26,7 @@ $(document).ready(function() {
 
     function createPublicRow(resourceData) {
       var newTr = $("<tr>");
-      newTr.data(resourceData);
-       newTr.append($("<td>").append(resourceData.topic)); 
+      newTr.append($("<td>").append(resourceData.topic)); 
       newTr.append($("<td>").append(resourceData.link)); 
       newTr.append($("<td>").append(resourceData.description));    
       return newTr;
@@ -47,11 +45,13 @@ $(document).ready(function() {
     }
 
     function getPublicResources() {
-      $.get("/api/public", function(data) {
+
+        $.get("/api/public", function(data) {
         var rowsToAdd = [];
         for (var i = 0; i < data.length; i++) {
           rowsToAdd.push(createPublicRow(data[i]));
-        }
+        };
+
         renderPublicList(rowsToAdd);
        });
     }
@@ -91,7 +91,6 @@ $(document).ready(function() {
       alertDiv.text("No Public Resources to display.");
       container.append(alertDiv);
     }
-  
   
     getFriendsResources(userId);
     getPublicResources();
