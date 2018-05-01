@@ -2,18 +2,21 @@ $(document).ready(function () {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
 
+  var user;
+  var userId;
+
   $.get("/api/user_data").then(function (data) {
     $(".dropdown-toggle").text("Welcome, " + data.firstName);
     $(".dropdown-toggle").append("<b class='caret'></b>");
     window.sessionStorage.setItem("user", JSON.stringify(data));
-    var user = data;
-    var userId = user.id;
+     user = data;
+     userId = user.id;
     getResources(userId);
     getUsers();
   });
 
-  var user = JSON.parse(window.sessionStorage.getItem("user"));
-  var userId = user.id;
+  user = JSON.parse(window.sessionStorage.getItem("user"));
+  userId = user.id;
 
   var resourcesList = $("#myTable-body");
   var userList = $("#sharedTable-body");
