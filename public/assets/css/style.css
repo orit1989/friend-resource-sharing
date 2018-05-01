@@ -214,6 +214,6 @@ body {
   color: white;
   bacground-color: rgba(0, 0, 0, 0.4);
 }
-.footer {
-  position: relative;
+.footer !important{
+  position: ;
 }
