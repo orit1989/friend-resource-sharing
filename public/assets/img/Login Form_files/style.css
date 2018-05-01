@@ -42,6 +42,7 @@ form.login {
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-image: url("/blurred_background.jpg");
   background-repeat: no-repeat;
 }
 .copyright {
@@ -117,7 +118,7 @@ body {
 }
 
 body {
-    background-image: url("background_2.jpg");
+    background-image: url("assets/img/blurred_background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -145,29 +146,4 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
     padding: 20px;
     margin: 0 auto;
-}
-#signup_bk {
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 20px;
-  margin: 0 auto;
-}
-#public_bk {
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 20px;
-  margin: 0 auto;
-}
-#mytable, #example {
-  background-color: white;
-  color: black;
-  border-color: black;
-}
-#addr_bk, #myres_bk {
-  background-color: rgba(0, 0, 0, 0.4);
-  color: black;
-  border-color: black;
-  padding: 20px;
-  margin: 0 auto;
-}
-.label {
-  color: white;
 }
