@@ -2,15 +2,24 @@ $(document).ready(function () {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
 
-  $.get("/api/user_data").then(function (data) {
-    $(".dropdown-toggle").text("Welcome, " + data.firstName);
-    $(".dropdown-toggle").append("<b class='caret'></b>");
-    window.sessionStorage.setItem("user", JSON.stringify(data));
-  });
-
   var user = JSON.parse(window.sessionStorage.getItem("user"));
-  var userId = user.id;
+  var userId = user.id || null;
 
+  if (!user) {
+    $.get("/api/user_data").then(function (data) {
+      $(".dropdown-toggle").text("Welcome, " + data.firstName);
+      $(".dropdown-toggle").append("<b class='caret'></b>");
+      window.sessionStorage.setItem("user", JSON.stringify(data));
+      user = data;
+      userId = data.id;
+
+      getResources(userId);
+      getUsers();
+    });
+  } else {
+    getResources(userId);
+    getUsers();
+  }
 
   var resourcesList = $("#myTable-body");
   var userList = $("#sharedTable-body");
@@ -108,9 +117,7 @@ $(document).ready(function () {
     $.get("/api/users/", function (data) {
       var rowsToAdd = [];
       for (var i = 0; i < data.length; i++) {
-        if (data[i].id != userId) {
           rowsToAdd.push(createUserRow(data[i]));
-        }
       }
       renderUserList(rowsToAdd);
     });
@@ -207,10 +214,6 @@ $(document).ready(function () {
       window.location.href = "/resources";
     });
   }
-
-  //Not using handlebars
-  getResources(userId);
-  getUsers();
 
   // Using Handlebars
   // getHBResources(userId);
