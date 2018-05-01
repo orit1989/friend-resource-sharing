@@ -11,9 +11,10 @@ var db        = {};
 console.log( "ENV", env );
 console.log( "DIALECT", config.dialect );
 console.log( "ENV_VARIABLE", config.use_env_variable );
+console.log( "JawsDB", process.env[config.use_env_variable] );
 
 if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
+  var sequelize = new Sequelize(process.env[config.use_env_variable], { dialect: config.dialect });
 } else {
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
