@@ -24,11 +24,11 @@ $(document).ready(function () {
     checkbox.attr("data-id", resourceData.id);
     newTr.data(resourceData);
     var editButton = '<p data-placement="top" data-toggle="tooltip" title="Edit"><button ' + 'value="' + resourceData.id + '" class="edit btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>';
-    var deleteButton = '<p data-placement="top" data-toggle="tooltip" title="Delete"> <button ' + 'value="' + resourceData.id + '" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p>';
+    var deleteButton = '<p data-placement="top" data-toggle="tooltip" title="Delete"> <button ' + 'value="' + resourceData.id + '" class="delete btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p>';
     newTr.append($("<td>").append(checkbox));
-    newTr.append("<td>" + resourceData.topic + "</td>");
-    newTr.append("<td><a target='_blank' href='" + resourceData.link + "'>" + resourceData.link + "</a></td>");
-    newTr.append("<td> " + resourceData.description + "</td>");
+    newTr.append("<td class='topic'>" + resourceData.topic + "</td>");
+    newTr.append("<td class='link'><a target='_blank' href='" + resourceData.link + "'>" + resourceData.link + "</a></td>");
+    newTr.append("<td class='description'> " + resourceData.description + "</td>");
     newTr.append($("<td>").append(resourceData.isPublic));
     newTr.append($("<td>").append(editButton));
     newTr.append($("<td>").append(deleteButton));
@@ -56,6 +56,7 @@ $(document).ready(function () {
     let topic = $("#" + resourceId).find(".topic").text();
     let link = $("#" + resourceId).find(".link").text();
     let description = $("#" + resourceId).find(".description").text();
+
     $(".resourceForm").attr("data-resource-id", resourceId);
     $("#topic").attr("value", topic);
     $("#link").attr("value", link);
@@ -77,6 +78,7 @@ $(document).ready(function () {
   }
 
   $(document).on("click", ".delete", function () {
+    console.log( "DELETE" );
     let resourceId = $(this).val();
     $("#" + resourceId).remove(); 
     $.ajax({
