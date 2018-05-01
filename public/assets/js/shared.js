@@ -18,8 +18,8 @@ $(document).ready(function() {
       var newTr = $("<tr>");
       newTr.append($("<td>").append(resourceData.firstName)); 
       newTr.append($("<td>").append(resourceData.lastName)); 
-      newTr.append($("<td>").append(resourceData.topic)); 
-      newTr.append($("<td>").append(resourceData.link)); 
+      newTr.append($("<td>").append(resourceData.topic));
+      newTr.append("<td class='link'><a target='_blank' href='" + resourceData.link + "'>" + resourceData.link + "</a></td>");
       newTr.append($("<td>").append(resourceData.description));    
       return newTr;
     }
@@ -27,7 +27,7 @@ $(document).ready(function() {
     function createPublicRow(resourceData) {
       var newTr = $("<tr>");
       newTr.append($("<td>").append(resourceData.topic)); 
-      newTr.append($("<td>").append(resourceData.link)); 
+      newTr.append("<td class='link'><a target='_blank' href='" + resourceData.link + "'>" + resourceData.link + "</a></td>");
       newTr.append($("<td>").append(resourceData.description));    
       return newTr;
     }
