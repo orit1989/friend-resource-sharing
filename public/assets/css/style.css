@@ -1,9 +1,11 @@
 /* Global Styling ================================================================================= */
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+html { overflow: auto }
 
 body {
   font-family: 'Roboto', sans-serif;
   background-repeat: no-repeat;
+  overflow: scroll;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -21,6 +23,14 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
+    min-height: 600px;
+}
+
+.btn.btn-primary {
+  color: white;
+  background-color: #993399;
+  border-color: white;
+  border-width: .7px;
 }
 /* Navbar ================================================================================= */
 @media screen and (min-width:768px) {
@@ -73,7 +83,9 @@ body {
   color: black !important;
   padding-right: 10px;
 }
-
+.glyphicon-menu-hamburger {
+  font-size: 20px;
+}
 /* Body / Forms ================================================================================= */
 form.signup,
 form.login {
@@ -189,7 +201,6 @@ fa-tumblr:hover,
   left: 0;
   width: 100%;
   height:auto;
-
   margin:0 auto;
   overflow:hidden;
   position: fixed;
@@ -218,7 +229,7 @@ footer .menu li a:hover {
 }
 /* Footer Copyright ================================================================================= */
 #copyright_text {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
   font-size: 12px;
   margin: 0;
