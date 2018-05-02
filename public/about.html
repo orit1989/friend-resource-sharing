@@ -84,32 +84,34 @@
     <body>
         <div id="main-container" class="container">
             <section class="main-section">
-                <h1 class="text-center">About</h1>
+                <h1>About</h1>
 
-                <p>The Friend Resource Sharing enables saving resources along with any descriptions. The resources can then
-                        be shared with others who are registered in the system. This will be useful for anyone who is in need of
-                        saving resource links from various sources such as slack and email to a central location. It further
-                        facilitates sharing with specific people in the system or to all the users in the system.</p>
-                        
+                <p id="about">The Friend Resource Sharing enables saving resources along with any descriptions. The resources can then
+                    be shared with others who are registered in the system. This will be useful for anyone who is in need
+                    of saving resource links from various sources such as slack and email to a central location. It further
+                    facilitates sharing with specific people in the system or to all the users in the system.</p>
+
+                <br>
+                <h2>The Team</h2>
                 <div class="row">
                     <div class="col-md-2">
-                        <img src="assets/img/orit.png" width="180" height="auto" alt="Orit" />
+                        <img src="assets/img/orit.png" width="180" height="180" alt="Orit" />
                         <h3>Orit Freud</h3>
                     </div>
                     <div class="col-md-2">
-                        <img src="assets/img/saogat.jpg" width="180" height="auto" alt="Saogat" />
+                        <img src="assets/img/saogat.jpg" width="180" height="180" alt="Saogat" />
                         <h3>Saogat Rab</h3>
                     </div>
                     <div class="col-md-2">
-                        <img src="assets/img/kenneth.png" width="180" height="auto" alt="Kenneth" />
+                        <img src="assets/img/kenneth.png" width="180" height="180" alt="Kenneth" />
                         <h3>Kenneth Barnes II</h3>
                     </div>
                     <div class="col-md-2">
-                        <img src="assets/img/gary.png" width="180" height="auto" alt="Gary" />
+                        <img src="assets/img/gary.png" width="180" height="180" alt="Gary" />
                         <h3>Gary Estime</h3>
                     </div>
                     <div class="col-md-2">
-                        <img src="assets/img/ivan.png" width="180" height="auto" alt="Ivan" />
+                        <img src="assets/img/ivan.png" width="180" height="180" alt="Ivan" />
                         <h3>Ivan Ventura</h3>
                     </div>
                 </div>
@@ -174,6 +176,12 @@
 
     <script>
         $(document).ready(function () {
+
+            $.get("/api/user_data").then(function (data) {
+                $(".dropdown-toggle").text("Welcome, " + data.firstName);
+                $(".dropdown-toggle").append("<b class='caret'></b>");
+                window.sessionStorage.setItem("user", JSON.stringify(data));
+            });
 
             $('.dropdown').click(function () {
                 $(this).find('.dropdown-menu').toggle();
