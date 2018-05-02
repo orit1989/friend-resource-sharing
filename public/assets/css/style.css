@@ -25,13 +25,13 @@ body {
     background-position: center top;
     min-height: 600px;
 }
-
+/* 
 .btn.btn-primary {
   color: white;
   background-color: #993399;
   border-color: white;
   border-width: .7px;
-}
+} */
 /* Navbar ================================================================================= */
 @media screen and (min-width:768px) {
   .navbar-brand-centered {
@@ -121,7 +121,12 @@ color: white;
 color: white;
 bacground-color: rgba(0, 0, 0, 0.4);
 }
-
+/* save {
+    color: white;
+  background-color: #993399;
+  border-color: white;
+  border-width: .7px;
+} */
 /* Body / Form Backgrounds ================================================================================= */
 .resourceForm{
   background-color: rgba(0, 0, 0, 0.4);
