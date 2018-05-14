@@ -22,7 +22,6 @@ module.exports = function (sequelize, DataTypes) {
             defaultValue: false
         }
     });
-    
 
     Resource.associate = function (models) {
         Resource.belongsTo(models.User, {
@@ -30,21 +29,11 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             }
         });
-        // SharedResources = sequelize.define('SharedResources', {});
-        // Resource.belongsToMany(models.User, {
-        //     through: SharedResources
-        // });
-        // models.User.belongsToMany(Resource, {
-        //     through: SharedResources
-        // });
-
 
         Resource.belongsToMany(models.User, {
             through: "Users_Resources"
         });
     };
-
-
 
     return Resource;
 };
