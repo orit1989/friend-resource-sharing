@@ -2,21 +2,28 @@ $(document).ready(function () {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
 
-  var user;
-  var userId;
+  var user = JSON.parse(window.sessionStorage.getItem("user"));
+  var userId = user ? user.id : null;
 
-  $.get("/api/user_data").then(function (data) {
-    $(".dropdown-toggle").text("Welcome, " + data.firstName);
+  console.log(user);
+
+  if (!user) {
+    $.get("/api/user_data").then(function (data) {
+      window.sessionStorage.setItem("user", JSON.stringify(data));
+      user = data;
+      userId = user.id;
+
+      $(".dropdown-toggle").text("Welcome, " + user.firstName);
+      $(".dropdown-toggle").append("<b class='caret'></b>");
+      getResources(userId);
+      getUsers();
+    });
+  } else {
+    $(".dropdown-toggle").text("Welcome, " + user.firstName);
     $(".dropdown-toggle").append("<b class='caret'></b>");
-    window.sessionStorage.setItem("user", JSON.stringify(data));
-     user = data;
-     userId = user.id;
     getResources(userId);
     getUsers();
-  });
-
-  user = JSON.parse(window.sessionStorage.getItem("user"));
-  userId = user.id;
+  }
 
   var resourcesList = $("#myTable-body");
   var userList = $("#sharedTable-body");
@@ -114,7 +121,7 @@ $(document).ready(function () {
     $.get("/api/users/", function (data) {
       var rowsToAdd = [];
       for (var i = 0; i < data.length; i++) {
-          rowsToAdd.push(createUserRow(data[i]));
+        rowsToAdd.push(createUserRow(data[i]));
       }
       renderUserList(rowsToAdd);
     });
